@@ -1,5 +1,5 @@
 import mysql.connector
-from config import MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE
+from config import MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_DATABASE
 from mysql.connector import IntegrityError
 from datetime import datetime
 
@@ -7,6 +7,7 @@ def get_db_connection():
 
     connection = mysql.connector.connect(
         host=MYSQL_HOST,
+        port = MYSQL_PORT,
         user=MYSQL_USER,
         password=MYSQL_PASSWORD,
         database=MYSQL_DATABASE

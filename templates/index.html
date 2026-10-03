@@ -6,12 +6,92 @@ Home
 
 {% block content %}
 
+<section class="hero-section">
+
     <h1>Student Management System</h1>
 
     <p id="welcome-message">
         Welcome to the Student Management System.
     </p>
 
-    <p>Manage student information using the options above.</p>
+    <p>
+        A web-based application for managing student information
+        with a simple, secure, and user-friendly interface.
+    </p>
+
+    <div class="hero-actions">
+        {% if session.get("user_id") %}
+            <a href="/students" class="home-button">View Students</a>
+            <a href="/dashboard" class="home-button">Dashboard</a>
+        {% else %}
+            <a href="/login" class="home-button">Login</a>
+            <a href="/register" class="home-button">Get Started</a>
+        {% endif %}
+    </div>
+
+</section>
+
+
+<section class="features-section">
+
+    <h2>Application Features</h2>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <h3>Student Management</h3>
+            <p>
+                Add, view, edit, and delete student information
+                through a simple interface.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Student Search</h3>
+            <p>
+                Quickly search students using their name,
+                department, or email.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Dashboard</h3>
+            <p>
+                View student statistics and department-wise
+                student information.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Authentication</h3>
+            <p>
+                Secure registration and login with password
+                hashing and protected routes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="technology-section">
+
+    <h2>Technology Stack</h2>
+
+    <p>
+        This application was built using:
+    </p>
+
+    <div class="technology-list">
+        <span>Python</span>
+        <span>Flask</span>
+        <span>MySQL</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+    </div>
+
+</section>
 
 {% endblock %}

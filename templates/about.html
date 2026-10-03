@@ -6,8 +6,92 @@ About
 
 {% block content %}
 
-    <h1>About</h1>
+<section class="about-section">
 
-    <p>This application manages student information.</p>
+    <h1>About the Student Management System</h1>
+
+    <p>
+        The Student Management System is a web-based application
+        designed to manage student information through a simple
+        and structured interface.
+    </p>
+
+
+    <h2>What This Application Does</h2>
+
+    <p>
+        The application allows authenticated users to add, view,
+        search, edit, and delete student records. It also provides
+        a dashboard for viewing basic student statistics.
+    </p>
+
+
+    <h2>Application Flow</h2>
+
+    <p>
+        The application follows a frontend-backend-database
+        architecture:
+    </p>
+
+    <div class="architecture-flow">
+
+        <div class="flow-box">
+            <strong>Frontend</strong>
+            <span>HTML, CSS, JavaScript</span>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-box">
+            <strong>Backend</strong>
+            <span>Python + Flask</span>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-box">
+            <strong>Database</strong>
+            <span>MySQL</span>
+        </div>
+
+    </div>
+
+
+    <h2>Authentication & Security</h2>
+
+    <p>
+        The application includes user registration, password
+        hashing, login sessions, protected routes, CSRF protection,
+        input validation, parameterized SQL queries, and
+        environment-based configuration for sensitive values.
+    </p>
+
+
+    <h2>Technology Stack</h2>
+
+    <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>MySQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git & GitHub</li>
+        <li>Gunicorn</li>
+        <li>Render</li>
+        <li>Aiven MySQL</li>
+    </ul>
+
+
+    <h2>Project Purpose</h2>
+
+    <p>
+        This project was developed to understand how a frontend
+        application communicates with a Python backend, how backend
+        code interacts with a relational database, and how a complete
+        web application can be tested and deployed.
+    </p>
+
+</section>
 
 {% endblock %}

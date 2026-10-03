@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Student
+{% endblock %}
+
+{% block content %}
+
+<div class="student-form">
+
+    <h1>Edit Student</h1>
+
+    <form action="/students/edit/{{ student.id }}" method="POST" id="edit-student-form">
+
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="name">Name:</label>
+        <input type="text"
+               id="name"
+               name="name"
+               value="{{ student.name }}"
+               required>
+
+        <label for="department">Department:</label>
+        <input type="text"
+               id="department"
+               name="department"
+               value="{{ student.department }}"
+               required>
+
+        <label for="email">Email:</label>
+        <input type="email"
+               id="email"
+               name="email"
+               value="{{ student.email }}"
+               required>
+
+        <button type="submit" class="submit-button">
+            Update Student
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

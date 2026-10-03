@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Dashboard Header -->
+
+    <div class="dashboard-header">
+
+        <h1>Student Dashboard</h1>
+
+        <p>
+            Welcome, <strong>{{ dashboard_data["username"] }}</strong>!
+        </p>
+
+        <p>
+            Manage student information from the options below.
+        </p>
+
+    </div>
+
+
+    <!-- Dashboard Statistics -->
+
+    <div class="dashboard-stats">
+
+        <div class="dashboard-card">
+
+            <h2>Total Students</h2>
+
+            <p>
+                {{ dashboard_data["total_students"] }}
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h2>Total Departments</h2>
+
+            <p>
+                {{ dashboard_data["total_departments"] }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Students By Department -->
+
+    <div class="department-section">
+
+        <h2>Students by Department</h2>
+
+        <div class="department-list">
+
+            {% for department, count in dashboard_data["students_by_departments"] %}
+
+                <div class="department-card">
+
+                    <span class="department-name">
+                        {{ department }}
+                    </span>
+
+                    <span class="department-count">
+                        {{ count }}
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Quick Actions -->
+
+    <div class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-buttons">
+
+            <a href="/students" class="dashboard-button">
+                View Students
+            </a>
+
+            <a href="/students/add" class="dashboard-button">
+                Add Student
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
